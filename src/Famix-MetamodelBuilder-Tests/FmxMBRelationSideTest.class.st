@@ -20,6 +20,27 @@ FmxMBRelationSideTest >> testBasics [
 	self assertEmpty: side comment
 ]
 
+{ #category : #'as yet unclassified' }
+FmxMBRelationSideTest >> testBasics_amp [
+
+	"SmallAmp has derived this test from `FmxMBRelationSideTest>>#testBasics` by regenerating its assertions.
+	This test can cover this part:
+	*	In `FmxMBRelationSide>> #generationStrategy` from 21 to 40:
+		Operation: RemoveCaretOperator
+		Code snippet: `^ generationStrategy`
+		Dynamic state: nil
+		Mutant id: RemoveCaretOperator#FmxMBRelationSide#generationStrategy#21#40
+"
+
+	<madeBySmallAmp>
+	| side |
+	side := FmxMBRelationSide new.
+	self
+		deny: side hasRelation;
+		assert: side generationStrategy class
+		equals: FmxMBStandardRelationSideGenerationStrategy
+]
+
 { #category : #tests }
 FmxMBRelationSideTest >> testContainmentRelations [
 
