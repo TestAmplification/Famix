@@ -66,3 +66,35 @@ FmxMBConfigurationTest >> testConfiguration_amp [
 		navigationForNonContainers: true;
 		wantsToGenerateImportingContext: true
 ]
+
+{ #category : #'as yet unclassified' }
+FmxMBConfigurationTest >> testConfiguration_amp_A1 [
+
+	"SmallAmp has derived this test from `FmxMBConfigurationTest>>#testConfiguration` by applying some transformations and regenerating its assertions.
+	This test can cover these parts:
+	*	In `FmxMBConfiguration>> #defaultModelTag` from 19 to 26:
+		Operation: RemoveCaretOperator
+		Code snippet: `^ #Model`
+		Dynamic state: nil
+		Mutant id: RemoveCaretOperator#FmxMBConfiguration#defaultModelTag#19#26
+	*	In `FmxMBConfiguration>> #modelTag` from 12 to 65:
+		Operation: RemoveCaretOperator
+		Code snippet: `^ modelTag ifNil: [ modelTag := self defaultModelTag ]`
+		Dynamic state: {#modelTag->nil}
+		Mutant id: RemoveCaretOperator#FmxMBConfiguration#modelTag#12#65
+"
+
+	<madeBySmallAmp>
+	| config aString |
+	config := builder configuration.
+	aString := config
+		           basicSuperclassName: #TestValue1;
+		           modelTag.
+	self assert: aString equals: #Model.
+	config
+		basicTraitName: #TestValue2;
+		classTag: #TestValue3;
+		navigationForContainers: false;
+		navigationForNonContainers: true;
+		wantsToGenerateImportingContext: true
+]
